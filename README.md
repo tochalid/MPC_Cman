@@ -8,8 +8,8 @@ Passing the project requires a successful simulator track run and documentation,
 
 Improvements made to:
 
-* src/[MPC.cpp](./src/main.cpp)
-* src/[MPC.cpp](./src/MPC.cpp]
+* src/[main.cpp](./src/main.cpp)
+* src/[MPC.cpp](./src/MPC.cpp)
 
 ## Implementation
 
