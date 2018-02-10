@@ -8,8 +8,8 @@ Passing the project requires a successful simulator track run and documentation,
 
 Improvements made to:
 
-(./src/main.cpp)
-(./src/MPC.cpp]
+* src/[MPC.cpp](./src/main.cpp)
+* src/[MPC.cpp](./src/MPC.cpp]
 
 ## Implementation
 
@@ -33,7 +33,7 @@ N determines the number of steps for which the cost function will be optimized f
 
 The reference trajectory is calculated with fitting a __3rd-order polynomial__ to waypoints returned by the simulator. In advance to the fitting the waypoints are converted to car-coordinate scheme. Waypoints are shifted and rotated. Then cte and epsi are calculated by solving the polynomial at __x=0__. Thus, the __angle__ of the reference trajectory rests with the x-axis at the origin.
 
-Weights were tuned so that large actuations were penalized but change rates of __delta__ and __a__ still set reactive to curvey road conditions. This helps for smoother steering but a brief tendency to overshoot running high speed. Larger weight on __cte__ caused instability. Orientation error __psi__ was penalized stronger to allow curvey road adaption. Weight of the velocity difference __dif v__ gradually increased until __reference velocity of ~90mph__ achieved. Pls see final weight values:
+Weights were tuned so that __large actuations__ were penalized but __change rates__ of delta and a still set reactive to curvey road conditions. This helps for smoother steering but a brief tendency to overshoot running high speed. Larger weight on cte caused instability. Orientation error psi was penalized stronger to allow curvey road adaption. Weight of the velocity difference dif v gradually increased until __reference velocity of ~90mph__ achieved. Pls see final weight values:
 
 * weight cte: 20
 * weight epsi: 3000
@@ -65,4 +65,4 @@ Note: Steering angle is flipped (multiplied by -1) to reflect turning convention
 * OS Setup: Ubuntu 16.4, for details pls see [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/23d376c7-0195-4276-bdf0-e02f1f3c665d)
 * Ipopt and CppAD packages: Please refer to this document for installation instructions: https://github.com/udacity/CarND-MPC-Project/blob/master/install_Ipopt_CppAD.md
 * Eigen package: Eigen is already part of the repo, pls see: http://eigen.tuxfamily.org/index.php?title=Main_Page
-* Simulator: The project involves Term 2 Simulator which can be downloaded here: https://github.com/udacity/self-driving-car-sim/releases. A server package uWebSocketIO is setting up a connection from the C++ program to the simulator, which acts as the host. Read the (./DATA.md) for a description of the data sent back from the simulator.
+* Simulator: The project involves Term 2 Simulator which can be downloaded here: https://github.com/udacity/self-driving-car-sim/releases. A server package uWebSocketIO is setting up a connection from the C++ program to the simulator, which acts as the host. Read the [DATA.md](https://github.com/udacity/CarND-MPC-Project/blob/master/DATA.md) for a description of the data sent back from the simulator.
